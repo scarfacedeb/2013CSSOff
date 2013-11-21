@@ -1,0 +1,33 @@
+/*
+  Settings
+  ========================================================================== */
+
+// Basic
+$base-line-height: 1.3;
+
+
+// Breakpoints
+$small-screen: 470px;
+$medium-screen: 760px;
+$large-screen: 1000px;
+
+$small: "only screen and (min-width: #{$small-screen})";
+$medium: "only screen and (min-width: #{$medium-screen})";
+$large: "only screen and (min-width: #{$large-screen})";
+
+
+
+// Colors
+$body-font-color: #000;
+$header-color: #cdc9dd;
+
+
+// Typography
+$body-font-family: 'Merriweather', serif;
+$body-font-weight: 300;
+
+$site-title-font-family: 'Lato', sans-serif;
+$site-title-font-size: 17.42em;
+$site-title-font-weight: 300;
+$site-title-line-height: .8;
+

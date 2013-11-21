@@ -1,0 +1,34 @@
+/*
+  Header
+  ========================================================================== */
+
+.site-header {
+  background-color: $header-color;
+}
+  .site-title {
+    line-height: $site-title-line-height;
+    text-transform: uppercase;
+    font: {
+      family: $site-title-font-family;
+      size: 8em;
+      weight: $site-title-font-weight;
+    };
+    color: #fff;
+
+    &:hover, &:focus { text-decoration: none; }
+  }
+    .site-title--shift {
+      margin: 0 -.05em 0 -.11em;
+    }
+
+
+@media #{$medium} {
+  .site-header {
+    width: 585px;
+  }
+    .site-title {
+      position: relative;
+      left: .5em;
+      font-size: $site-title-font-size;
+    }
+}

@@ -1,0 +1,25 @@
+/*
+  Base
+  ========================================================================== */
+
+body {
+  line-height: 1;
+  font: {
+    family: $body-font-family;
+    weight: $body-font-weight;
+  };
+  color: $body-font-color;
+}
+
+a {
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  line-height: $base-line-height;
+}
