@@ -38,7 +38,9 @@ p {
   line-height: $base-line-height;
 }
 
-
+h1, h2 {
+  margin: 0;
+}
 // .alpha {
 //   line-height: $alpha-line-height;
 //   font-family: $alpha-font-family;
