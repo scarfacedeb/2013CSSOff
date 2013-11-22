@@ -17,7 +17,7 @@
 
     &:hover, &:focus { text-decoration: none; }
   }
-    .site-title--shift {
+    .site-title__shift {
       margin: 0 -.05em 0 -.11em;
     }
 
@@ -41,13 +41,13 @@
 
 @include media($bp-m) {
   .site-header {
-    font-size: $site-header-font-size - 4em;
+    font-size: $site-header-font-size - 5em;
   }
 }
 
 @include media($bp-l) {
   .site-header {
-    font-size: $site-header-font-size - 2em;
+    font-size: $site-header-font-size - 3em;
   }
 }
 
