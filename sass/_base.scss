@@ -19,6 +19,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 
   &:focus,
   &:hover {
@@ -30,8 +31,10 @@ img {
   max-width: 100%;
 }
 
+// No need to set common margin, because there're too many disparate styles
 p {
-  margin: 0.5em 0;
+  //margin: 0.5em 0;
+  margin: 0;
   line-height: $base-line-height;
 }
 

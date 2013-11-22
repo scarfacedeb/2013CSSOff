@@ -1,0 +1,35 @@
+/*
+  Beatles
+  ========================================================================== */
+
+
+.beatles {
+  clear: both;
+  margin-bottom: 3em;
+  background: $beatles-color;
+  color: #fff;
+}
+  .beatles__title {
+    margin: 0;
+    padding: .7em 0;
+    background: $beatles-heading-color;
+    text: {
+      transform: uppercase;
+      align: center;
+    };
+    font: {
+      family: $heading-font-family;
+      size: em(49);
+      weight: normal;
+    };
+  }
+  .beatles__body {
+    padding: .8em 1em 1.2em;
+    font-size: em(26);
+  }
+  .beatles__cite {
+    display: block;
+    margin-top: 1.2em;
+    font-size: 0.6923076923em;
+    color: rgba(255,255,255,.5);
+  }
