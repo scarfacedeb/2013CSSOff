@@ -5,6 +5,7 @@
 
 .featured {
   position: relative;
+  //clear: left;
 
   //@include span-columns(6);
   //width: grid-width(6);
@@ -14,9 +15,9 @@
     @include transform(rotate(-4deg) translateX(-19%));
 
     position: relative;
+    max-width: 760px;
 
     img {
-      //max-width: 790px;
     }
     &:after {
       @include transform(rotate(-3deg));
@@ -40,11 +41,16 @@
     position: relative;
     z-index: $z-featured-body;
     margin-top: -5.9em;
-    font-size: em(25);
+    max-width: 21em;
+    font: {
+      family: $body-font-family;
+      weight: $body-font-weight;
+      size: em(25);
+    };
   }
     .featured__title {
       position: relative;
-      margin: 0;
+      margin-bottom: 0.25em;
       line-height: 1.1;
       text-transform: uppercase;
       font: {
@@ -62,9 +68,18 @@
     }
 
 
-@include media($bp-m) {
+@include media($bp-s) {
   .featured {
     float: left;
-    width: 55%;
+    margin-top: 2.3%;
+    margin-left: 2%;
+    width: 51%;
+    font-size: .85em;
+  }
+}
+
+@include media($bp-l) {
+  .featured {
+    font-size: 1em;
   }
 }

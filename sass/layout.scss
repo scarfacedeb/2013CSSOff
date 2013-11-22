@@ -6,17 +6,17 @@
   // margin: 0 auto;
   // max-width: $max-width;
   //@include outer-container;
+  margin: 0 auto;
+  max-width: $max-width;
 }
 
 main {
-  // margin: 0 auto;
-  // max-width: $max-width;
-  @include outer-container;
+  padding-top: 1.5em;
 }
 
   .volume-title {
-    float: right;
-    margin: 0 4em 2em 0;
+    float: left;
+    margin-left: 25%;
     text-transform: uppercase;
     font: {
       family: $extra2-font-family;
@@ -28,8 +28,37 @@ main {
 
 
 
-@include media($bp-s){
+@include media($bp-m){
   main {
-    padding-top: 9.5em;
+    padding-top: 8.5em;
   }
 }
+
+
+// body {
+//   font-size: .7em;
+// }
+
+// @include media($bp-s){
+//   body {
+//     font-size: .8em;
+//   }
+// }
+
+// @include media($bp-l) {
+//   body {
+//     font-size: 1em;
+//   }
+// }
+
+// @include media($bp-l) {
+//   body {
+//     font-size:
+//   }
+// }
+
+// @include media($bp-xl) {
+//   body {
+//     font-size: $site-header-font-size;
+//   }
+// }

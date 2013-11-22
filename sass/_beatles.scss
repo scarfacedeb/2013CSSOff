@@ -25,11 +25,21 @@
   }
   .beatles__body {
     padding: .8em 1em 1.2em;
-    font-size: em(26);
+    font: {
+      family: $body-font-family;
+      weight: $body-font-weight;
+      size: em(26);
+    };
   }
-  .beatles__cite {
+  .beatles__body__cite {
     display: block;
     margin-top: 1.2em;
     font-size: 0.6923076923em;
     color: rgba(255,255,255,.5);
   }
+
+// @include media(new-breakpoint(max-height 800px)){
+//   .beatles {
+//     font-size: .8em;
+//   }
+// }

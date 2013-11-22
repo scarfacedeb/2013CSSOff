@@ -3,13 +3,31 @@
   ========================================================================== */
 
 .barbie {
-
+  float: left;
+  margin-bottom: 2.5em;
+  width: 65.83333%;
+  text-align: center;
 }
-
+  .barbie__title {
+    margin: .5em 0 .3em;
+    font: {
+      family: $extra2-font-family;
+      size: em(36);
+      weight: 600;
+      style: italic;
+    };
+    color: $barbie-title-color;
+  }
+  .barbie__body {
+    font: {
+      family: $extra-font-family;
+      size: em(19);
+    };
+    color: $barbie-body-color;
+  }
 
 @include media($bp-m) {
   .barbie {
-    float: left;
     width: 35%;
   }
 }
