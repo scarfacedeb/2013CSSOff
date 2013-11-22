@@ -2,11 +2,69 @@
   Featured
   ========================================================================== */
 
-.featured--img {
-  max-width: 760px;
+
+.featured {
+  position: relative;
+
+  //@include span-columns(6);
+  //width: grid-width(6);
 }
 
+  .featured--img {
+    @include transform(rotate(-4deg) translateX(-19%));
 
-@media #{$small} {
+    position: relative;
 
+    img {
+      //max-width: 790px;
+    }
+    &:after {
+      @include transform(rotate(-3deg));
+
+      content: "";
+      position: absolute;
+      top: 80%;
+      z-index: -1;
+      left: 10px;
+      bottom: 15px;
+      width: 50%;
+      max-width:300px;
+      //background: rgba(0,0,0,.6);
+      //box-shadow: 0 15px 10px rgba(0,0,0,.6);
+      box-shadow: 0 0 10px 10px hsla(0, 0%, 0%, .075),
+                   0 0 40px 20px hsla(0, 0%, 0%, .075),
+                   inset 0 0 50px 100px hsla(0, 0%, 0%, .15);
+    }
+  }
+  .featured--body {
+    position: relative;
+    z-index: $z-featured-body;
+    margin-top: -5.9em;
+    font-size: em(25);
+  }
+    .featured--title {
+      position: relative;
+      margin: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+      font: {
+        family: $heading-font-family;
+        size: 3em;
+        weight: normal;
+      };
+      color: $featured-title-color;
+    }
+    .featured--subtitle {
+      text-transform: uppercase;
+      font-size: .52em;
+      font-weight: normal;
+      color: $featured-subtitle-color;
+    }
+
+
+@include media($bp-m) {
+  .featured {
+    float: left;
+    width: 55%;
+  }
 }

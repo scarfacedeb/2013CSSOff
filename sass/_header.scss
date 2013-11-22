@@ -4,13 +4,13 @@
 
 .site-header {
   background-color: $header-color;
+  font-size: $site-header-font-size - 8em;
 }
   .site-title {
     line-height: $site-title-line-height;
     text-transform: uppercase;
     font: {
       family: $site-title-font-family;
-      size: 8em;
       weight: $site-title-font-weight;
     };
     color: #fff;
@@ -22,13 +22,37 @@
     }
 
 
-@media #{$medium} {
+
+@include media($bp-s) {
   .site-header {
-    width: 585px;
+    float: left;
+    //margin-left: 422px - $site-header-width;
+    //padding-top: 2em;
+    //width: $site-header-width; // 422px
+    width: $site-header-width;
+    font-size: $site-header-font-size - 6em;
   }
     .site-title {
       position: relative;
       left: .5em;
-      font-size: $site-title-font-size;
+      z-index: $z-site-title;
     }
+}
+
+@include media($bp-m) {
+  .site-header {
+    font-size: $site-header-font-size - 4em;
+  }
+}
+
+@include media($bp-l) {
+  .site-header {
+    font-size: $site-header-font-size - 2em;
+  }
+}
+
+@include media($bp-xl) {
+  .site-header {
+    font-size: $site-header-font-size;
+  }
 }
