@@ -7,6 +7,7 @@
   margin-bottom: 2.5em;
   width: 65.83333%;
   text-align: center;
+  font-size: .85em;
 }
   .barbie__title {
     margin: .5em 0 .3em;
@@ -30,46 +31,87 @@
   .barbie__img {
     display: inline-block;
     position: relative;
-    width: 203px;
-    height: 300px;
+    width: 205px; // img width + border
+    height: 302px; // img height + border
     cursor: pointer;
 
     img {
       position: absolute;
       top: 0;
       left: 0;
+      // illusion of depth
+      border-right: 2px solid #aaa;
+      border-bottom: 2px solid #ccc;
     }
   }
-    .barbie__img--front {
+
+
+    .barbie__img__front {
+      // if JS is turned off, box is opened by default
+      @include transform(rotateZ(-4deg) translateX(-100px));
+      z-index: $z-barbie-front;
+
+      // fix for jagged edges in Chrome
+      @include backface-visibility(hidden);
+      box-shadow: 0 0 1px transparent; // weird
+
+    }
+    .barbie__img__back {
+      z-index: $z-barbie-back;
+    }
+
+
+  // Final after-animation states
+
+  .barbie__img--closed {
+    .barbie__img__front {
+      @include transform(rotateZ(-3deg) translateX(-50px));
+      z-index: $z-barbie-front-closed;
+
       @include transition-property (transform);
       @include transition-duration(0.2s);
       @include transition-timing-function(ease-in-out);
-      @include backface-visibility(hidden);
-
-      z-index: 7;
-    }
-    .barbie__img--back {
-      z-index: 5;
-      //@include backface-visibility(hidden);
     }
 
-  .barbie__img:hover .barbie__img--front {
-    @include transform(rotateZ(-3deg) translateX(-50px));
+    &:hover .barbie__img__front {
+      @include transform(rotateZ(-4deg) translateX(-100px));
+    }
   }
-
-  .barbie__img--opened .barbie__img--front {
-    @include animation(openBox 0.8s ease-in-out forwards);
-  }
-  @-webkit-keyframes openBox {
-    0% { -webkit-transform: rotateZ(-3deg) translateX(-50px); z-index: 10;}
-    50% { -webkit-transform: rotateZ(-5deg) translateX(-339px); z-index: 10;}
-    51% { z-index: 2;}
-    100% { -webkit-transform: rotateZ(0deg) translateX(0px); z-index: 2;}
+  .barbie__img--opened .barbie__img__front {
+    @include transform(rotateZ(-4deg) translateX(-100px));
+    z-index: $z-barbie-front;
   }
 
 
+  // In-animation states
 
-@include media($bp-m) {
+  .barbie__img--animating .barbie__img__front {
+    @include animation(openBox 0.8s ease-in-out);
+  }
+  .barbie__img--opened.barbie__img--animating .barbie__img__front {
+    @include animation-direction(reverse);
+  }
+
+  @include keyframes(openBox) {
+    0% {
+      @include transform(rotateZ(-4deg) translateX(-100px));
+      z-index: $z-barbie-front-closed;
+    }
+    50% {
+      @include transform(rotateZ(-5deg) translateX(-339px));
+    }
+    51% {
+      z-index: $z-barbie-front;
+    }
+    100% {
+      @include transform(rotateZ(-4deg) translateX(-100px));
+      z-index: $z-barbie-front;
+    }
+  }
+
+
+
+@include media($bp-s) {
   .barbie {
     position: relative;
     z-index: $z-barbie;
@@ -77,5 +119,13 @@
     margin-top: -1rem;
     margin-left: 3%;
     width: 40%;
+    //font-size: 1em;
+  }
+}
+
+
+@include media($bp-m) {
+  .barbie {
+    font-size: 1em;
   }
 }
