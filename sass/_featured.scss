@@ -78,7 +78,7 @@
 
 @include media($bp-s) {
   .featured {
-    float: left;
+    float: right; // to let .barbie position on the left
     margin-top: 2.1%;
     margin-left: 2%;
     width: 51%;
@@ -91,7 +91,8 @@
   }
     .featured__img {
       @include transform(rotate(-4deg) translateX(-19%));
-      @include transition(-webkit-filter 1s);
+
+      -webkit-transition: -webkit-filter 1s;
     }
     .featured__body {
       max-width: 21em;

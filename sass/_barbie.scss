@@ -26,8 +26,56 @@
     color: $barbie-body-color;
   }
 
+
+  .barbie__img {
+    display: inline-block;
+    position: relative;
+    width: 203px;
+    height: 300px;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+    .barbie__img--front {
+      @include transition-property (transform);
+      @include transition-duration(0.2s);
+      @include transition-timing-function(ease-in-out);
+      @include backface-visibility(hidden);
+
+      z-index: 7;
+    }
+    .barbie__img--back {
+      z-index: 5;
+      //@include backface-visibility(hidden);
+    }
+
+  .barbie__img:hover .barbie__img--front {
+    @include transform(rotateZ(-3deg) translateX(-50px));
+  }
+
+  .barbie__img--opened .barbie__img--front {
+    @include animation(openBox 0.8s ease-in-out forwards);
+  }
+  @-webkit-keyframes openBox {
+    0% { -webkit-transform: rotateZ(-3deg) translateX(-50px); z-index: 10;}
+    50% { -webkit-transform: rotateZ(-5deg) translateX(-339px); z-index: 10;}
+    51% { z-index: 2;}
+    100% { -webkit-transform: rotateZ(0deg) translateX(0px); z-index: 2;}
+  }
+
+
+
 @include media($bp-m) {
   .barbie {
-    width: 35%;
+    position: relative;
+    z-index: $z-barbie;
+    //margin-top: -41rem;
+    margin-top: -1rem;
+    margin-left: 3%;
+    width: 40%;
   }
 }
