@@ -15,23 +15,30 @@ main {
 }
 
   .volume-title {
-    float: left;
-    margin-left: 25%;
+    float: right;
+    margin-top: -4.1em;
+    margin-right: 3em;
+    color: #fff;
     text-transform: uppercase;
     font: {
       family: $extra2-font-family;
       size: .75em;
       style: italic;
     };
-    color: #b0aeb8;
   }
 
 
 
-@include media($bp-m){
+@include media($bp-s){
   main {
     padding-top: 8.5em;
   }
+
+    .volume-title {
+      float: left;
+      margin-left: 25%;
+      color: #b0aeb8;
+    }
 }
 
 

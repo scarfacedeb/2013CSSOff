@@ -4,7 +4,8 @@
 
 .site-header {
   background-color: $header-color;
-  font-size: 3em;
+  font-size: 5em;
+  padding: 0.5rem;
 }
   .site-title {
     line-height: $site-title-line-height;
@@ -31,7 +32,7 @@
     //width: $site-header-width; // 422px
     padding: 1.5rem 0 40rem;
     width: $site-header-width;
-    font-size: 5em;
+    font-size: 10em;
   }
     .site-title {
       position: relative;

@@ -9,15 +9,20 @@
 
   //@include span-columns(6);
   //width: grid-width(6);
+  margin-bottom: 4em;
+  font-size: .78em;
 }
 
   .featured__img {
-    @include transform(rotate(-4deg) translateX(-19%));
+    @include transform(rotate(-4deg) translateX(-17%));
+    @include backface-visibility(hidden);
 
     position: relative;
     max-width: 760px;
 
     img {
+      // compensate white space from translateX
+      max-width: 118%;
     }
     &:after {
       @include transform(rotate(-3deg));
@@ -31,17 +36,19 @@
       width: 50%;
       max-width:300px;
       //background: rgba(0,0,0,.6);
-      //box-shadow: 0 15px 10px rgba(0,0,0,.6);
-      box-shadow: 0 0 10px 10px hsla(0, 0%, 0%, .075),
-                   0 0 40px 20px hsla(0, 0%, 0%, .075),
-                   inset 0 0 50px 100px hsla(0, 0%, 0%, .15);
+
+      box-shadow: 0 15px 10px rgba(0,0,0,.6);
+      // box-shadow: 0 0 10px 10px hsla(0, 0%, 0%, .075),
+      //              0 0 40px 20px hsla(0, 0%, 0%, .075),
+      //              inset 0 0 50px 100px hsla(0, 0%, 0%, .15);
     }
   }
   .featured__body {
     position: relative;
     z-index: $z-featured-body;
     margin-top: -5.9em;
-    max-width: 21em;
+    max-width: 25em;
+
     font: {
       family: $body-font-family;
       weight: $body-font-weight;
@@ -53,6 +60,7 @@
       margin-bottom: 0.25em;
       line-height: 1.1;
       text-transform: uppercase;
+      text-shadow: 0px -15px 70px rgba(0,0,0,.7);
       font: {
         family: $heading-font-family;
         size: 3em;
@@ -71,15 +79,42 @@
 @include media($bp-s) {
   .featured {
     float: left;
-    margin-top: 2.3%;
+    margin-top: 2.1%;
     margin-left: 2%;
     width: 51%;
+    font-size: .78em;
+
+    &:hover .featured__img,
+    &:focus .featured__img {
+      -webkit-filter: grayscale(80%);
+    }
+  }
+    .featured__img {
+      @include transform(rotate(-4deg) translateX(-19%));
+      @include transition(-webkit-filter 1s);
+    }
+    .featured__body {
+      max-width: 21em;
+    }
+    .featured__title {
+      font-size: 2.2em;
+    }
+}
+
+@include media($bp-m) {
+  .featured {
     font-size: .85em;
   }
+    .featured__title {
+      //font-size: 2.2em;
+    }
 }
 
 @include media($bp-l) {
   .featured {
     font-size: 1em;
   }
+    .featured__title {
+      font-size: 3em;
+    }
 }

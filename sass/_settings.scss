@@ -20,7 +20,7 @@ $max-width: em(960);
 
 $bp-xs: new-breakpoint(min-width 480px);
 $bp-s: new-breakpoint(min-width 640px);
-$bp-m: new-breakpoint(min-width 768px);
+$bp-m: new-breakpoint(min-width 760px);
 $bp-l: new-breakpoint(min-width 1000px);
 $bp-xl: new-breakpoint(min-width 1280px);
 
@@ -40,6 +40,8 @@ $barbie-title-color: #5f5d66;
 $barbie-body-color: #6e6c77;
 
 $boots-title-color: #24795a;
+
+$bullets-border-color: #e5e5e5;
 
 $beatles-heading-color: #524741;
 $beatles-color: #71625a;

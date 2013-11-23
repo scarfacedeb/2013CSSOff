@@ -6,3 +6,23 @@
   @include span-columns(10);
   @include omega;
 }
+  .bullets__title {
+    padding: 1em 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $bullets-border-color;
+    text: {
+      align: center;
+      transform: uppercase;
+    };
+    font: {
+      family: $heading-font-family;
+      size: em(18);
+      weight: 400;
+    };
+    color: #fdcd84;
+  }
+    .bullets__title__subtitle {
+      text-transform: none;
+      color: #cbb8a0;
+    }
