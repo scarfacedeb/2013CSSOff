@@ -41,7 +41,11 @@ var transEndEventNames = {
 
   barbieImg.addEventListener( 'click', function(){
     if ( Modernizr.cssanimations ){
-      barbieImg.classList.add( 'barbie__img--animating' );
+      // fix for flickering of the first animation
+      // css-only methods (like backface-visiblity) doesn't work
+      requestAnimationFrame( function(){
+        barbieImg.classList.add( 'barbie__img--animating' );
+      });
     } else {
       setFinalState();
     }

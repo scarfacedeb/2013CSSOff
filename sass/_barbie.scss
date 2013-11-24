@@ -54,7 +54,6 @@
       // fix for jagged edges in Chrome
       @include backface-visibility(hidden);
       box-shadow: 0 0 1px transparent; // weird
-
     }
     .barbie__img__back {
       z-index: $z-barbie-back;
@@ -65,6 +64,7 @@
 
   .barbie__img--closed {
     .barbie__img__front {
+      // hint that it can be opened
       @include transform(rotateZ(-3deg) translateX(-50px));
       z-index: $z-barbie-front-closed;
 
@@ -73,7 +73,8 @@
       @include transition-timing-function(ease-in-out);
     }
 
-    &:hover .barbie__img__front {
+    &:hover .barbie__img__front,
+    &:focus .barbie__img__front {
       @include transform(rotateZ(-4deg) translateX(-100px));
     }
   }
