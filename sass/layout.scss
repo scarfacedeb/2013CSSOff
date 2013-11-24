@@ -15,32 +15,38 @@ main {
 }
 
   .volume-title {
-    float: right;
-    margin-top: -4.1em;
+    //float: right;
+    // margin-top: -4.1em;
     margin-right: 3em;
-    color: #fff;
+    text-align: right;
     text-transform: uppercase;
     font: {
       family: $extra2-font-family;
       size: .75em;
       style: italic;
     };
+    color: #fff;
   }
 
 
 
 @include media($bp-s){
   main {
-    padding-top: 8.5em;
+    padding-top: 7.5em;
   }
 
     .volume-title {
-      float: left;
-      margin-left: 25%;
+      //float: left;
+      //margin-left: 25%;
       color: #b0aeb8;
     }
 }
 
+@include media($bp-m){
+  main {
+    padding-top: 6.5em;
+  }
+}
 
 // body {
 //   font-size: .7em;

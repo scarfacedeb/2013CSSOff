@@ -79,10 +79,10 @@
 @include media($bp-s) {
   .featured {
     float: right; // to let .barbie position on the left
-    margin-top: 2.1%;
+    margin-top: 4.1%;
     margin-left: 2%;
     width: 51%;
-    font-size: .78em;
+    //font-size: .78em;
 
     &:hover .featured__img,
     &:focus .featured__img {
@@ -104,6 +104,7 @@
 
 @include media($bp-m) {
   .featured {
+    //margin-top: 2.1%;
     font-size: .85em;
   }
     .featured__title {
