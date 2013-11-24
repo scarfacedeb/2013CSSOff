@@ -10,9 +10,11 @@
   color: #fff;
 }
   .beatles__title {
+    position: relative;
     margin: 0;
     padding: .7em 0;
     background: $beatles-heading-color;
+    box-shadow: 0 6px rgba(0,0,0, .2);
     text: {
       transform: uppercase;
       align: center;
@@ -31,12 +33,32 @@
       size: em(26);
     };
   }
-  .beatles__body__cite {
-    display: block;
-    margin-top: 1.2em;
-    font-size: 0.6923076923em;
-    color: rgba(255,255,255,.5);
+    .beatles__body__cite {
+      display: block;
+      margin-top: 1.2em;
+      font-size: 0.6923076923em;
+      color: rgba(255,255,255,.5);
+    }
+
+
+  .beatles__road {
+    position: relative;
   }
+    .beatles__road__img {
+      display: block;
+      position: relative;
+      z-index: 20;
+    }
+
+    .beatles__road__map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+
 
 // @include media(new-breakpoint(max-height 800px)){
 //   .beatles {
