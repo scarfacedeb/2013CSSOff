@@ -10,7 +10,7 @@
   //@include span-columns(6);
   //width: grid-width(6);
   margin-bottom: 4em;
-  font-size: .78em;
+  font-size: .75em;
 }
 
   .featured__img {
@@ -47,8 +47,6 @@
     position: relative;
     z-index: $z-featured-body;
     margin-top: -5.9em;
-    max-width: 25em;
-
     font: {
       family: $body-font-family;
       weight: $body-font-weight;
@@ -58,12 +56,13 @@
     .featured__title {
       position: relative;
       margin-bottom: 0.25em;
+      max-width: 8em;
       line-height: 1.1;
       text-transform: uppercase;
       text-shadow: 0px -15px 70px rgba(0,0,0,.7);
       font: {
         family: $heading-font-family;
-        size: 3em;
+        size: 2.5em;
         weight: normal;
       };
       color: $featured-title-color;
@@ -76,7 +75,7 @@
     }
 
 
-@include media($bp-s) {
+@media #{$bp-s} {
   .featured {
     float: right; // to let .barbie position on the left
     margin-top: 4.1%;
@@ -97,26 +96,22 @@
     .featured__body {
       max-width: 21em;
     }
-    .featured__title {
-      font-size: 2.2em;
-    }
 }
 
-@include media($bp-m) {
+@media #{$bp-m} {
   .featured {
-    //margin-top: 2.1%;
-    font-size: .85em;
+    font-size: .86em;
   }
-    .featured__title {
-      //font-size: 2.2em;
-    }
 }
 
-@include media($bp-l) {
+@media #{$bp-l} {
   .featured {
     font-size: 1em;
   }
-    .featured__title {
-      font-size: 3em;
+    .featured__body {
+      margin-top: -5.8em;
     }
+      .featured__title {
+        font-size: 3em;
+      }
 }
