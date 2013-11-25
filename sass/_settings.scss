@@ -18,11 +18,18 @@ $max-width: em(960);
 //$medium: new-breakpoint(min-width 768px);
 //$large: new-breakpoint(min-width 1000px);
 
-$bp-xs: new-breakpoint(min-width 480px);
-$bp-s: new-breakpoint(min-width 640px);
-$bp-m: new-breakpoint(min-width 760px);
-$bp-l: new-breakpoint(min-width 1000px);
-$bp-xl: new-breakpoint(min-width 1280px);
+// $bp-xs: new-breakpoint(min-width 480px);
+// $bp-s: new-breakpoint(min-width 640px);
+// $bp-m: new-breakpoint(min-width 760px);
+// $bp-l: new-breakpoint(min-width 1000px);
+// $bp-xl: new-breakpoint(min-width 1280px);
+
+$bp-xs: "only screen and (min-width: 480px)";
+$bp-s: "only screen and (min-width: 640px)";
+$bp-m: "only screen and (min-width: 760px)";
+$bp-l: "only screen and (min-width: 1000px)";
+$bp-xl: "only screen and (min-width: 1280px)";
+
 
 $base-line-height: 1.3;
 

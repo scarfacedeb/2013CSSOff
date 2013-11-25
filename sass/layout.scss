@@ -30,7 +30,7 @@ main {
 
 
 
-@include media($bp-s){
+@media #{$bp-s} {
   main {
     padding-top: 7.5em;
   }
@@ -42,7 +42,7 @@ main {
     }
 }
 
-@include media($bp-m){
+@media #{$bp-m} {
   main {
     padding-top: 6.5em;
   }
@@ -52,25 +52,25 @@ main {
 //   font-size: .7em;
 // }
 
-// @include media($bp-s){
+// @media #{$bp-s){
 //   body {
 //     font-size: .8em;
 //   }
 // }
 
-// @include media($bp-l) {
+// @media #{$bp-l) {
 //   body {
 //     font-size: 1em;
 //   }
 // }
 
-// @include media($bp-l) {
+// @media #{$bp-l) {
 //   body {
 //     font-size:
 //   }
 // }
 
-// @include media($bp-xl) {
+// @media #{$bp-xl) {
 //   body {
 //     font-size: $site-header-font-size;
 //   }

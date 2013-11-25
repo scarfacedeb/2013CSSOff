@@ -112,7 +112,7 @@
 
 
 
-@include media($bp-s) {
+@media #{$bp-s} {
   .barbie {
     position: relative;
     z-index: $z-barbie;
@@ -125,7 +125,7 @@
 }
 
 
-@include media($bp-m) {
+@media #{$bp-m} {
   .barbie {
     font-size: 1em;
   }

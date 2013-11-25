@@ -30,7 +30,7 @@
   }
 
 
-@include media($bp-m) {
+@media #{$bp-m} {
   .boots {
     clear: both;
     margin-left: 0;
