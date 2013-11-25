@@ -78,7 +78,7 @@
 @media #{$bp-s} {
   .featured {
     float: right; // to let .barbie position on the left
-    margin-top: 4.1%;
+    margin-top: 3.5%;
     margin-left: 2%;
     width: 51%;
     //font-size: .78em;
@@ -106,6 +106,7 @@
 
 @media #{$bp-l} {
   .featured {
+    margin-top: 3.1%;
     font-size: 1em;
   }
     .featured__body {

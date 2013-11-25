@@ -3,9 +3,6 @@
   ========================================================================== */
 
 .page-wrap {
-  // margin: 0 auto;
-  // max-width: $max-width;
-  //@include outer-container;
   margin: 0 auto;
   max-width: $max-width;
 }
@@ -15,14 +12,14 @@ main {
 }
 
   .volume-title {
-    //float: right;
-    // margin-top: -4.1em;
-    margin-right: 3em;
-    text-align: right;
+    margin-left: 60%;
+    max-width: 45em; // forbids to be positioned too far right on large screens
+    text-align: center;
     text-transform: uppercase;
     font: {
       family: $extra2-font-family;
       size: .75em;
+      weight: 400;
       style: italic;
     };
     color: #fff;
@@ -32,20 +29,11 @@ main {
 
 @media #{$bp-s} {
   main {
-    padding-top: 7.5em;
+    padding-top: 8em;
   }
-
     .volume-title {
-      //float: left;
-      //margin-left: 25%;
       color: #b0aeb8;
     }
-}
-
-@media #{$bp-m} {
-  main {
-    padding-top: 6.5em;
-  }
 }
 
 // body {
