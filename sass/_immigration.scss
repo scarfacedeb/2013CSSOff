@@ -1,0 +1,75 @@
+/*
+  Beatles
+  ========================================================================== */
+
+.immigration {
+  padding: 0 1em;
+  margin-bottom: 3em;
+}
+  .immigration__header {
+    display: inline-block;
+    font-family: $heading-font-family;
+  }
+    .immigration__header__title {
+      margin-bottom: 0.256em;
+      padding-bottom: 0.256em;
+      border-bottom: 0.254em solid #000;
+      text-transform: uppercase;
+      font-size: em(50);
+    }
+     .immigration__header__subtitle {
+      margin-bottom: 0.512em;
+      padding-bottom: 0.487179em;
+      border-bottom: 0.076923em solid #000;
+      font-size: em(24);
+     }
+
+  .immigration__body {
+    @extend .merriweather;
+    font-size: em(16);
+  }
+
+
+
+@media #{$bp-s} {
+  .immigration__header__title {
+    font-size: em(68);
+  }
+  .immigration__header__subtitle {
+    font-size: em(33);
+  }
+  .immigration__body {
+    font-size: em(18);
+  }
+}
+
+@media #{$bp-m} {
+  .immigration {
+    float: left;
+    margin-right: 2.5%;
+    padding-right: 0;
+    width: 74.375%;
+  }
+    .immigration__header__title {
+      font-size: em(63);
+    }
+    .immigration__header__subtitle {
+      font-size: em(30);
+    }
+}
+
+@media #{$bp-l} {
+  .immigration {
+    font-size: 1em;
+    padding-left: 0;
+  }
+    .immigration__header__title {
+      font-size: em(82);
+    }
+    .immigration__header__subtitle {
+      font-size: em(39);
+    }
+    .immigration__body {
+      font-size: em(22);
+    }
+}
