@@ -5,14 +5,16 @@
 
 .overflow {
   clear: both;
-  margin-bottom: 3em;
+  overflow: hidden;
+  margin: 0 auto 3em;
+  max-width: em(1063);
 }
 
   .overflow__title {
     @extend .oswald;
 
     position: relative;
-    margin-bottom: em(21);
+    margin-bottom: em(20);
     font-size: em(82);
     color: #a0b4c0;
 
@@ -27,8 +29,8 @@
       top: -21px;
       left: -21px;
       z-index: 2;
-      width: 1063px;
-      height: 306px;
+      width: 100%;
+      height: $overflow-water-height;
       background: url(../images/overflow.png) no-repeat top left;
     }
   }
@@ -36,24 +38,49 @@
   .overflow__body {
     @extend .lora;
 
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: $max-width;
+
     position: relative;
     z-index: 2;
     font-style: italic;
-    //font-size: em(16);
+    font-size: em(14);
     color: #5e6c74;
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    p:first-child {
+      float: right;
+      max-width: 80%;
+      text-align: right;
+    }
+    p:nth-child(2) {
+      clear: right;
+      max-width: 70%;
+    }
+    p:last-child {
+      clear: left;
+      float: right;
+      max-width: 80%;
+    }
+  }
+
+@media #{$bp-m} {
+  .overflow__body {
+    padding: 0;
+    font-size: em(16);
 
     p:first-child {
       @include transform(rotateZ(2.4deg));
 
-      float: right;
-      margin-bottom: 1em;
       max-width: em(735);
-      text-align: right;
     }
     p:nth-child(2) {
       @include transform(rotateZ(-1deg));
 
-      clear: right;
       margin-bottom: 2.2em;
       max-width: em(685);
     }
@@ -64,3 +91,4 @@
       max-width: em(740);
     }
   }
+}
