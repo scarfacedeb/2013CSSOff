@@ -48,6 +48,7 @@
     }
       .beatles__img {
         display: block;
+        box-shadow: 0 0 0 2px $beatles-color; // hack to hide leaking map
       }
 
   // transforms clip
@@ -60,7 +61,7 @@
 
     &:hover, &:focus {
       .beatles__front {
-        @include transform(rotateZ(-45deg) translate(-22.19%, -39.5%) scale(2));
+        @include transform(rotateZ(-45deg) translate(-22.2%, -39.5%) scale(2));
       }
       .beatles__wrap {
         @include transform(rotateZ(45deg) translate(17%, 2%) scale(0.5));
@@ -68,6 +69,8 @@
       .beatles__curl {
         width: 250px;
         height: 250px;
+        width: 26.049%;
+        height: 39.8%;
       }
     }
   }
@@ -79,7 +82,8 @@
     }
 
     .beatles__front {
-      @include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(2));
+      //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(2));
+      @include transform(rotateZ(-45deg) translate(-18.3%, -28.1%) scale(2));
 
       position: relative;
       z-index: 20;
@@ -89,15 +93,15 @@
       // height: 164.4%;
       // width: 1129px;
       // height: 1036px;
-      //box-shadow: 0 0 0 2px red;
+      // box-shadow: 0 0 0 2px red;
       //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(1.5));
       //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(1.6));
     }
 
       .beatles__wrap {
-        @include transform(rotateZ(45deg) translate(15%, 0) scale(0.5));
-        //@include transform(rotate(45deg) translate(15%, 0) scale(0.75));
-        //@include transform(rotate(45deg) translate(15%, 0) scale(0.625));
+        //@include transform(rotateZ(45deg) translate(15%, 0) scale(0.5));
+        @include transform(rotateZ(45deg) translate(13%, 0) scale(0.5));
+
 
         position: relative;
         // image-rendering:optimizeSpeed;             // Legal fallback
@@ -110,14 +114,18 @@
         // -ms-interpolation-mode:nearest-neighbor;   // IE8+
       }
         .beatles__curl {
-          @include transition(width 0.5s ease-in-out, height 0.5s ease-in-out);
+          @include transition(width 0.3s ease-in-out, height 0.3s ease-in-out);
 
           position: absolute;
           right: 0;
           bottom: 0;
           z-index: 40;
-          width: 190px;
-          height: 190px;
+          // width: 190px;
+          // height: 190px;
+          width: 150px;
+          height: 150px;
+          width: 15.65%;
+          height: 23.81%;
           background: #ffffff;
           background: -webkit-linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
           background: linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
