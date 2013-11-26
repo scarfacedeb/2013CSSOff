@@ -11,7 +11,7 @@
 }
 
   .featured__img {
-    @include transform(rotate(-4deg) translateX(-2%));
+    @include transform(rotate(-1deg) translateX(-2%));
     @include backface-visibility(hidden);
 
     position: relative;

@@ -64,6 +64,26 @@
     ========================================================================== */
 
 
+  var beatlesRoad = document.getElementById( 'beatles_road' ),
+    beatlesFront = document.getElementById( 'beatles_front' );
+
+    function showMap(){
+      beatlesRoad.classList.add( 'beatles__road--opened' );
+      beatlesRoad.classList.remove( 'beatles__road--closed' );
+
+      //beatlesRoad.removeEventListener( 'click', showMap );
+      //beatlesFront.addEventListener( 'click', hideMap );
+    }
+    // function hideMap(){
+    //   beatlesRoad.classList.remove( 'beatles__road--opened' );
+    //   beatlesRoad.classList.add( 'beatles__road--closed' );
+
+    //   beatlesFront.removeEventListener( 'click', hideMap );
+    //   beatlesRoad.addEventListener( 'click', showMap );
+    // }
+
+  beatlesRoad.addEventListener( 'click', showMap );
+
   // GMaps
 
   var beatlesMap,

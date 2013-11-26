@@ -138,7 +138,7 @@
 
     // bluray icon on top
     &:before {
-      @include transform(translate3d(76px,-19px,10px));
+      @include transform(translate3d(-15px,-19px,10px));
 
       content: "";
       position: absolute;
@@ -258,6 +258,12 @@
       top: 19px;
     }
 
+.bluray {
+  &:hover .bluray__disc,
+  &:focus .bluray__disc {
+    @include transform(translate3d(0,0,0px) rotate3d(0,1,0,150deg));
+  }
+}
 
 
 
@@ -268,15 +274,14 @@
     //width: 23.125%;
     width: em($bluray-width);
     text-align: left;
-
-    &:hover .bluray__disc,
-    &:focus .bluray__disc {
-      @include transform(translate3d(0,0,0px) rotate3d(0,1,0,150deg));
-    }
   }
 
     .bluray__disc {
       margin-top: -51px;
       margin-left: 25px;
+
+      &:before {
+        @include transform(translate3d(76px,-19px,10px));
+      }
     }
 }

@@ -19,11 +19,11 @@
     padding: .7em 0;
     background: $beatles-heading-color;
     box-shadow: 0 6px rgba(0,0,0, .2);
+    font-size: em(49);
     text: {
       transform: uppercase;
       align: center;
     };
-    font-size: em(49);
   }
   .beatles__body {
     @extend .merriweather;
@@ -41,95 +41,106 @@
 
   .beatles__road {
     position: relative;
-  }
-    .beatles__front {
-      position: relative;
-      z-index: 20;
-    }
-      .beatles__img {
-        display: block;
-        box-shadow: 0 0 0 2px $beatles-color; // hack to hide leaking map
-      }
-
-  // transforms clip
-
-  .beatles__road {
-    position: relative;
     overflow: hidden;
-    // width: 960px;
-    // height: 629px;
-
-    &:hover, &:focus {
-      .beatles__front {
-        @include transform(rotateZ(-45deg) translate(-22.2%, -39.5%) scale(2));
-      }
-      .beatles__wrap {
-        @include transform(rotateZ(45deg) translate(17%, 2%) scale(0.5));
-      }
-      .beatles__curl {
-        width: 250px;
-        height: 250px;
-        width: 26.049%;
-        height: 39.8%;
-      }
-    }
   }
     .beatles__front,
     .beatles__wrap {
       @include transition-property (transform);
-      @include transition-duration(0.3s);
+      @include transition-duration($beatles-transition-time);
       @include transition-timing-function(ease-in-out);
     }
 
     .beatles__front {
-      //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(2));
       @include transform(rotateZ(-45deg) translate(-18.3%, -28.1%) scale(2));
 
       position: relative;
       z-index: 20;
       overflow: hidden;
-      //padding: 8.2% 32.2%;
-      // width: 117.6%;
-      // height: 164.4%;
-      // width: 1129px;
-      // height: 1036px;
-      // box-shadow: 0 0 0 2px red;
-      //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(1.5));
-      //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(1.6));
     }
 
       .beatles__wrap {
-        //@include transform(rotateZ(45deg) translate(15%, 0) scale(0.5));
         @include transform(rotateZ(45deg) translate(13%, 0) scale(0.5));
 
 
-        position: relative;
+        position: relative;                 // CSS4 Proposed
+        // -ms-interpolation-mode:nearest-neighbor;
         // image-rendering:optimizeSpeed;             // Legal fallback
         // image-rendering:-moz-crisp-edges;          // Firefox
         // image-rendering:-o-crisp-edges;            // Opera
         // image-rendering:-webkit-optimize-contrast; // Safari
         // image-rendering:optimize-contrast;         // CSS3 Proposed
         // image-rendering:crisp-edges;               // CSS4 Proposed
-        // image-rendering:pixelated;                 // CSS4 Proposed
-        // -ms-interpolation-mode:nearest-neighbor;   // IE8+
+        // image-rendering:pixelated;   // IE8+
       }
+        .beatles__img {
+          display: block;
+          box-shadow: 0 0 0 2px $beatles-color; // hack to hide leaking map
+        }
+
         .beatles__curl {
-          @include transition(width 0.3s ease-in-out, height 0.3s ease-in-out);
+          @include transition(width $beatles-transition-time ease-in-out, height $beatles-transition-time ease-in-out);
 
           position: absolute;
           right: 0;
           bottom: 0;
           z-index: 40;
-          // width: 190px;
-          // height: 190px;
-          width: 150px;
-          height: 150px;
-          width: 15.65%;
+          width: 15.65%; // 150px
           height: 23.81%;
           background: #ffffff;
           background: -webkit-linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
+          background: -moz-linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
           background: linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
         }
+
+
+    .beatles__back,
+    .beatles__map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+
+
+  // Hover state
+
+  .beatles__road--closed:hover,
+  .beatles__road--closed:focus {
+    .beatles__front {
+      @include transform(rotateZ(-45deg) translate(-22.2%, -39.5%) scale(2));
+    }
+      .beatles__wrap {
+        @include transform(rotateZ(45deg) translate(17%, 2%) scale(0.5));
+      }
+        .beatles__curl {
+          width: 26.049%; // 250px
+          height: 39.8%;
+        }
+  }
+
+
+
+  // Opened state
+
+  .beatles__road--opened {
+    .beatles__front {
+      @include transform(rotateZ(-45deg) translate(-45.8%, -180.3%) scale(2));
+    }
+      .beatles__wrap {
+        @include transform(rotateZ(45deg) translate(57%, 39%) scale(0.5));
+      }
+        .beatles__img {
+
+        }
+        .beatles__curl {
+          width: 104.2%; // 250px
+          height: 161.2%;
+        }
+  }
+
 
 
 
@@ -146,10 +157,10 @@
   //   }
   // }
   //   .beatles__road__front {
-  //     @include transition(all 1s);
 
   //     position: relative;
   //     z-index: 20;
+  //     @include transition(all 1s);
 
   //     // border-corner-shape is needed here!
   //     @include clip-path(polygon(0 0, 100% 0, 100% 87%, 87% 100%, 0 100%), '#beatles_mask');
@@ -157,17 +168,6 @@
   //     .beatles__road__img {
   //       display: block;
   //     }
-
-    .beatles__back,
-    .beatles__map {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 10;
-    }
-
 
 
 @media #{$bp-s} {
