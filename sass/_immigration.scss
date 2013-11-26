@@ -46,10 +46,14 @@
 @media #{$bp-m} {
   .immigration {
     float: left;
-    margin-right: 2.5%;
-    padding-right: 0;
-    width: 74.375%;
+    width: 100%;
+    padding-right: 1.5em;
+    //width: 74.375%;
+    margin-right: em(-$bluray-width);
   }
+    .immigration__inner {
+      margin-right: em($bluray-width);
+    }
     .immigration__header__title {
       font-size: em(63);
     }

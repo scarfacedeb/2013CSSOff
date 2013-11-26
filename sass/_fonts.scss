@@ -1,8 +1,23 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400|Lora:400,400italic|Oswald|Merriweather:300,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400|Lora:400,400italic|Oswald:400,300|Merriweather:300,400);
 
 .merriweather {
   font: {
     family: 'Merriweather', serif;
     weight: 300;
-  }
+  };
+}
+
+.oswald {
+  font: {
+    family: 'Oswald', sans-serif;
+    weight: 400;
+  };
+}
+
+.lora {
+  font-family: 'Lora', serif;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
 }

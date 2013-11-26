@@ -10,6 +10,8 @@
   color: #fff;
 }
   .beatles__title {
+    @extend .oswald;
+
     position: relative;
     margin: 0;
     padding: .7em 0;
@@ -19,19 +21,13 @@
       transform: uppercase;
       align: center;
     };
-    font: {
-      family: $heading-font-family;
-      size: em(49);
-      weight: normal;
-    };
+    font-size: em(49);
   }
   .beatles__body {
+    @extend .merriweather;
+
     padding: .8em 1em 1.2em;
-    font: {
-      family: $body-font-family;
-      weight: $body-font-weight;
-      size: em(26);
-    };
+    font-size: em(26);
   }
     .beatles__body__cite {
       display: block;

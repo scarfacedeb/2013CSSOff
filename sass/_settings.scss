@@ -53,7 +53,6 @@ $bullets-border-color: #e5e5e5;
 $beatles-heading-color: #524741;
 $beatles-color: #71625a;
 
-
 // Typography
 $body-font-family: 'Merriweather', serif;
 $body-font-weight: 300;
@@ -68,7 +67,6 @@ $heading-font-family: 'Oswald', sans-serif;
 
 $extra-font-family: 'Lato', sans-serif;
 $extra2-font-family: 'Lora', serif;
-
 
 
 
@@ -95,5 +93,27 @@ $site-title-line-height: .8;
 
 
 
-// Featured
+/*
+  Bluray
+  ========================================================================== */
 
+// Typography
+
+$bluray-title-font-size: 31; // for em()
+
+
+// Colors
+
+$bluray-primary-color: #3a83bb;
+$bluray-secondary-color: rgba(255,255,255,.2);
+$bluray-border-color: #234f70;
+
+
+// Z-indexes
+
+$z-bluray-premier-title: 2;
+
+
+// Dimensions
+
+$bluray-width: 226;
