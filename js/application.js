@@ -131,6 +131,7 @@
       //beatlesRoad.removeEventListener( 'click', showMap );
       //beatlesFront.addEventListener( 'click', hideMap );
     }
+    // NO TIME FOR THIS!
     // function hideMap(){
     //   beatlesRoad.classList.remove( 'beatles__road--opened' );
     //   beatlesRoad.classList.add( 'beatles__road--closed' );
@@ -172,6 +173,18 @@
 
   window.onload = loadGMaps;
   window.initGMaps = initGMaps; // make it available as a callback
+
+
+  /*
+    Bluray
+    ========================================================================== */
+
+  if ( !Modernizr.csstransforms3d ){
+    var blurayDisc = document.getElementById( 'bluray_disc' );
+
+    blurayDisc.outerHTML = "<img class='blueray__fallback' src='/images/transformers_fallback.png' alt='Transformenrs'>";
+  }
+
 
 
 })(document, window);

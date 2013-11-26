@@ -278,13 +278,6 @@
       top: 19px;
     }
 
-.bluray {
-  &:hover .bluray__disc,
-  &:focus .bluray__disc {
-    @include transform(translate3d(0,0,0px) rotate3d(0,1,0,150deg));
-  }
-}
-
 
 
 
@@ -294,6 +287,11 @@
     //width: 23.125%;
     width: em($bluray-width);
     text-align: left;
+
+    &:hover .bluray__disc,
+    &:focus .bluray__disc {
+      @include transform(translate3d(0,0,0px) rotate3d(0,1,0, 150deg));
+    }
   }
 
     .bluray__disc {
