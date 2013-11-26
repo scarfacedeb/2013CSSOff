@@ -7,6 +7,7 @@
   clear: both;
   margin-bottom: 2em;
   background: $beatles-color;
+  font-size: .5em;
   color: #fff;
 }
   .beatles__title {
@@ -142,8 +143,14 @@
     }
 
 
+@media #{$bp-s} {
+  .beatles {
+    font-size: .8em;
+  }
+}
+
 @media #{$bp-m} {
   .beatles {
-    margin-top: -1em;
+    font-size: 1em;
   }
 }
