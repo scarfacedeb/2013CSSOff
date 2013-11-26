@@ -4,6 +4,7 @@
 
 
 .beatles {
+  position: relative;
   clear: both;
   margin-bottom: 2em;
   background: $beatles-color;
@@ -143,14 +144,57 @@
     }
 
 
+
 @media #{$bp-s} {
   .beatles {
     font-size: .8em;
   }
+
+  .beatles__heads {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+  }
+    .beatles__heads__1,
+    .beatles__heads__2,
+    .beatles__heads__3,
+    .beatles__heads__4 {
+      display: inline-block;
+      width: $beatles-heads-width;
+      height: $beatles-heads-height;
+      background-image: url(../images/heads.jpg);
+      background-repeat: no-repeat;
+    }
+
+    .beatles__heads__1 {
+      background-position: 0 0;
+    }
+    .beatles__heads__2 {
+      background-position: -169px 0;
+    }
+    .beatles__heads__3 {
+      display: none;
+      background-position: -358px 0;
+    }
+    .beatles__heads__4 {
+      display: none;
+      background-position: -547px 0;
+    }
+
 }
 
 @media #{$bp-m} {
   .beatles {
     font-size: 1em;
+  }
+    .beatles__heads__3 {
+      display: inline-block;
+    }
+}
+
+@media #{$bp-l} {
+  .beatles__heads__4 {
+    display: inline-block;
   }
 }

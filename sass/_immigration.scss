@@ -35,9 +35,10 @@
 @media #{$bp-s} {
   .immigration {
     float: left;
-    width: 100%;
-    padding-right: 1.5em;
+    margin-top: $beatles-heads-height;
     margin-right: em(-$bluray-width);
+    padding-right: 1.5em;
+    width: 100%;
   }
     .immigration__inner {
       margin-right: em($bluray-width);
