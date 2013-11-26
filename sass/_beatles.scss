@@ -120,6 +120,11 @@
           height: 39.8%;
         }
   }
+  .beatles__road--hidden {
+    .beatles__front {
+      z-index: -1;
+    }
+  }
 
 
 

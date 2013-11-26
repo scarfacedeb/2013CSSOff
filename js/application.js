@@ -21,6 +21,15 @@
     animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 
 
+  var bindEvent = function(el, eventName, eventHandler) {
+      if (el.addEventListener){
+        el.addEventListener(eventName, eventHandler, false);
+      } else if (el.attachEvent){
+        el.attachEvent('on'+eventName, eventHandler);
+      }
+    };
+
+
   // polyfills
 
   // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -79,7 +88,7 @@
   // no need to animate if there's no JS
   barbieImg.classList.add( 'barbie__img--closed' );
 
-  barbieImg.addEventListener( 'click', function(){
+  bindEvent( barbieImg, 'click', function(){
     if ( Modernizr.cssanimations && animEndEventName ){
       // fix for flickering of the first animation
       // css-only methods (like backface-visiblity) doesn't work
@@ -94,7 +103,7 @@
   });
 
   // set final state after on animation end
-  barbieImg.addEventListener( animEndEventName, setFinalState );
+  bindEvent( barbieImg, animEndEventName, setFinalState );
 
 
 
@@ -111,6 +120,14 @@
       beatlesRoad.classList.add( 'beatles__road--opened' );
       beatlesRoad.classList.remove( 'beatles__road--closed' );
 
+      if ( Modernizr.csstransitions ) {
+        bindEvent( beatlesRoad, transEndEventName, function(){
+          beatlesRoad.classList.add( 'beatles__road--hidden' );
+        });
+      } else {
+        beatlesRoad.classList.add( 'beatles__road--hidden' );
+      }
+
       //beatlesRoad.removeEventListener( 'click', showMap );
       //beatlesFront.addEventListener( 'click', hideMap );
     }
@@ -122,7 +139,7 @@
     //   beatlesRoad.addEventListener( 'click', showMap );
     // }
 
-  beatlesRoad.addEventListener( 'click', showMap );
+  bindEvent( beatlesRoad, 'click', showMap );
 
   // GMaps
 
