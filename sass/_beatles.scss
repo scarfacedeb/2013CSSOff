@@ -31,7 +31,7 @@
     padding: .8em 1em 1.2em;
     font-size: em(26);
   }
-    .beatles__body__cite {
+    .beatles__cite {
       display: block;
       margin-top: 1.2em;
       font-size: 0.6923076923em;
@@ -42,11 +42,11 @@
   .beatles__road {
     position: relative;
   }
-    .beatles__road__front {
+    .beatles__front {
       position: relative;
       z-index: 20;
     }
-      .beatles__road__img {
+      .beatles__img {
         display: block;
       }
 
@@ -59,22 +59,26 @@
     // height: 629px;
 
     &:hover, &:focus {
-      .beatles__road__front {
+      .beatles__front {
         @include transform(rotateZ(-45deg) translate(-22.19%, -39.5%) scale(2));
       }
-      .beatles__road__img {
+      .beatles__wrap {
         @include transform(rotateZ(45deg) translate(17%, 2%) scale(0.5));
+      }
+      .beatles__curl {
+        width: 250px;
+        height: 250px;
       }
     }
   }
-    .beatles__road__front,
-    .beatles__road__img {
+    .beatles__front,
+    .beatles__wrap {
       @include transition-property (transform);
       @include transition-duration(0.3s);
       @include transition-timing-function(ease-in-out);
     }
 
-    .beatles__road__front {
+    .beatles__front {
       @include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(2));
 
       position: relative;
@@ -90,13 +94,12 @@
       //@include transform(rotateZ(-45deg) translate(-21.2%, -32.3%) scale(1.6));
     }
 
-      .beatles__road__img {
+      .beatles__wrap {
         @include transform(rotateZ(45deg) translate(15%, 0) scale(0.5));
         //@include transform(rotate(45deg) translate(15%, 0) scale(0.75));
         //@include transform(rotate(45deg) translate(15%, 0) scale(0.625));
 
         position: relative;
-        display: block;
         // image-rendering:optimizeSpeed;             // Legal fallback
         // image-rendering:-moz-crisp-edges;          // Firefox
         // image-rendering:-o-crisp-edges;            // Opera
@@ -106,6 +109,20 @@
         // image-rendering:pixelated;                 // CSS4 Proposed
         // -ms-interpolation-mode:nearest-neighbor;   // IE8+
       }
+        .beatles__curl {
+          @include transition(width 0.5s ease-in-out, height 0.5s ease-in-out);
+
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          z-index: 40;
+          width: 190px;
+          height: 190px;
+          background: #ffffff;
+          background: -webkit-linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
+          background: linear-gradient( 135deg, #fff, #f3f3f3 45%, #ddd 50%, #aaa 50%, #bbb 56%, #ccc 62%, #f3f3f3 80%, #fff 100% );
+        }
+
 
 
   // clip-path clip
@@ -133,8 +150,8 @@
   //       display: block;
   //     }
 
-    .beatles__road__back,
-    .beatles__road__map {
+    .beatles__back,
+    .beatles__map {
       position: absolute;
       top: 0;
       left: 0;
