@@ -2,18 +2,20 @@
   Header
   ========================================================================== */
 
+
 .site-header {
   background-color: $header-color;
-  font-size: 5em;
+  padding: 0.8em 0 2em;
+  text-align: center;
 }
   .site-title {
+    @extend .lato;
+
     line-height: $site-title-line-height;
     text-transform: uppercase;
-    font: {
-      family: $site-title-font-family;
-      weight: $site-title-font-weight;
-    };
-    color: #fff;
+    font-size: em(70);
+    font-weight: $site-title-font-weight;
+    color: $site-title-color-small;
 
     &:hover, &:focus { text-decoration: none; }
   }
@@ -30,9 +32,9 @@
     //margin-left: 422px - $site-header-width;
     //padding-top: 2em;
     //width: $site-header-width; // 422px
-    padding-top: 1.5rem;
+    padding-top: em(24);
+    padding-bottom: 0;
     width: $site-header-width;
-    font-size: 10em;
 
     &:after {
       content: "";
@@ -50,22 +52,23 @@
       z-index: $z-site-title;
       float: right;
       text-align: right;
+      font-size: em(160);
+      color: $site-title-color;
     }
 }
 
 @media #{$bp-m} {
-  .site-header {
-    font-size: 12em;
+  .site-title {
+    font-size: em(192);
   }
 }
 
 
 @media #{$bp-l} {
-  .site-header {
-    font-size: 17.42em;
-
-    &:after {
-      height: 3.52em;
-    }
+  .site-header:after {
+    height: 3.52em;
+  }
+  .site-title {
+    font-size: em(279);
   }
 }

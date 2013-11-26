@@ -5,12 +5,9 @@
 
 .featured {
   position: relative;
-  //clear: left;
-
-  //@include span-columns(6);
-  //width: grid-width(6);
   margin-bottom: 4em;
-  font-size: .75em;
+  padding: 0 1em;
+  font-size: .6em;
 }
 
   .featured__img {
@@ -22,7 +19,7 @@
 
     img {
       // compensate white space from translateX
-      max-width: 118%;
+      //max-width: 118%;
     }
     &:after {
       @include transform(rotate(-3deg));
@@ -75,13 +72,21 @@
     }
 
 
+
+@media #{$bp-xs} {
+  .featured {
+    font-size: .72em;
+  }
+}
+
 @media #{$bp-s} {
   .featured {
     float: right; // to let .barbie position on the left
     margin-top: 3.5%;
     margin-left: 2%;
+    padding: 0;
     width: 51%;
-    //font-size: .78em;
+    font-size: .72em;
 
     &:hover .featured__img,
     &:focus .featured__img {

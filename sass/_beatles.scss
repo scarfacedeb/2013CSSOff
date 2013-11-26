@@ -5,7 +5,7 @@
 
 .beatles {
   clear: both;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   background: $beatles-color;
   color: #fff;
 }
@@ -142,8 +142,8 @@
     }
 
 
-// @media #{new-breakpoint(max-height 800px)}{
-//   .beatles {
-//     font-size: .8em;
-//   }
-// }
+@media #{$bp-m} {
+  .beatles {
+    margin-top: -1em;
+  }
+}

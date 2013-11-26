@@ -5,7 +5,7 @@
 .bullets {
   clear: both;
   padding: 0 1em;
-  margin-bottom: 2em;
+  margin: 2em 0;
 }
   .bullets__title {
     padding: 1em 0;
@@ -26,8 +26,10 @@
     .bullets__title__subtitle {
       @extend .lato;
 
+      display: block;
       margin-left: .5em;
       vertical-align: top;
+      line-height: 1.1;
       font-size: em(12, 15);
       font-weight: 700;
       color: #e0c167;
@@ -210,6 +212,10 @@
     }
 
 @media #{$bp-xs} {
+  .bullets__title__subtitle {
+    display: inline;
+  }
+
   .bullet {
     width: 33.3%;
     font-size: 1rem;
@@ -228,6 +234,7 @@
   .bullets {
     float: right;
     clear: none;
+    margin-top: 0;
     padding: 0;
     width: 82.91667%; // from neat
   }

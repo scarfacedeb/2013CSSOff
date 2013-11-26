@@ -3,39 +3,57 @@
   ========================================================================== */
 
 .boots {
-  float: left;
-  width: 23%;
-  margin-left: 2.5%;
+  clear: both;
+  padding: 0 1em;
   text-align: right;
 }
   .boots__title {
+    @extend .oswald;
+
     margin-bottom: .5em;
-    font: {
-      family: $heading-font-family;
-      size: em(21);
-      weight: normal;
-    };
+    text-transform: none;
+    text-align: left;
+    font-size: em(21);
     color: $boots-title-color;
   }
   .boots__body {
-    font: {
-      family: $extra-font-family;
-      size: em(14);
-      weight: normal;
-    };
-    color: $charcoal-color;
+    @extend .lato;
+
+    font-size: em(14);
+    color: $boots-body-color;
   }
   .boots__img {
     margin-top: 1.2em;
   }
 
 
+@media #{$bp-xs} {
+  .boots__body {
+    float: left;
+    max-width: 60%;
+  }
+}
+
+
 @media #{$bp-m} {
   .boots {
-    clear: both;
-    margin-left: 0;
+    float: left;
+    width: 23%;
     margin-right: 2.5%;
-    padding-left: 1.3%;
+    margin-bottom: -1em;
+    padding-left: 2%;
+    padding-right: 0;
     width: 14.58333%;
   }
+    .boots__title {
+      text-align: right;
+    }
+    .boots__body {
+      float: none;
+      max-width: none;
+    }
+    .boots__img {
+      position: relative;
+      z-index: $z-boots-img;
+    }
 }

@@ -6,6 +6,7 @@
   @extend .oswald;
 
   position: relative;
+  margin-bottom: 2.5em;
   padding: 0 .75em 1.5em;
   background-color: $bluray-primary-color;
   text-align: center;
@@ -95,16 +96,22 @@
     .blueray__premier__body {
       line-height: em(33);
     }
-    .bluray__premier__name {
-      font-size: em(26);
-    }
-    .bluray__premier__place {
-      font-size: em(28);
-      color: rgba(255,255,255,.4);
-    }
-    .bluray__premier__timespan {
-     font-size: em(39);
-    }
+      .bluray__premier__name,
+      .bluray__premier__place,
+      .bluray__premier__timespan {
+        display: block;
+      }
+
+      .bluray__premier__name {
+        font-size: em(26);
+      }
+      .bluray__premier__place {
+        font-size: em(28);
+        color: rgba(255,255,255,.4);
+      }
+      .bluray__premier__timespan {
+       font-size: em(39);
+      }
 
 
 
@@ -125,9 +132,9 @@
     @include backface-visibility(hidden);
 
     position: relative;
-    top: -51px;
-    left: 14px;
-    height: 190px;
+    margin: 0 auto;
+    width: 183px;
+    height: 241px;
 
     // bluray icon on top
     &:before {
@@ -255,7 +262,7 @@
 
 
 
-@media #{$bp-m} {
+@media #{$bp-s} {
   .bluray {
     float: right;
     //width: 23.125%;
@@ -267,4 +274,9 @@
       @include transform(translate3d(0,0,0px) rotate3d(0,1,0,150deg));
     }
   }
+
+    .bluray__disc {
+      margin-top: -51px;
+      margin-left: 25px;
+    }
 }

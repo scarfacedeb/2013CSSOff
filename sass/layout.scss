@@ -12,17 +12,17 @@ main {
 }
 
   .volume-title {
-    margin-left: 60%;
-    max-width: 45em; // forbids to be positioned too far right on large screens
+    @extend .lora;
+
+    margin: -$volume-title-indent-small 0 $volume-title-indent-small;
+    letter-spacing: .2em;
     text-align: center;
     text-transform: uppercase;
     font: {
-      family: $extra2-font-family;
       size: .75em;
-      weight: 400;
       style: italic;
     };
-    color: #fff;
+    color: $site-title-color-small;
   }
 
 
@@ -32,34 +32,8 @@ main {
     padding-top: 8em;
   }
     .volume-title {
+      margin: 0 0 0 60%;
+      max-width: 45em; // forbids to be positioned too far right on large screens
       color: #b0aeb8;
     }
 }
-
-// body {
-//   font-size: .7em;
-// }
-
-// @media #{$bp-s){
-//   body {
-//     font-size: .8em;
-//   }
-// }
-
-// @media #{$bp-l) {
-//   body {
-//     font-size: 1em;
-//   }
-// }
-
-// @media #{$bp-l) {
-//   body {
-//     font-size:
-//   }
-// }
-
-// @media #{$bp-xl) {
-//   body {
-//     font-size: $site-header-font-size;
-//   }
-// }

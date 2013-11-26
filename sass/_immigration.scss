@@ -26,40 +26,40 @@
 
   .immigration__body {
     @extend .merriweather;
-    font-size: em(16);
+    font-size: em(14);
   }
 
 
 
 @media #{$bp-s} {
-  .immigration__header__title {
-    font-size: em(68);
-  }
-  .immigration__header__subtitle {
-    font-size: em(33);
-  }
-  .immigration__body {
-    font-size: em(18);
-  }
-}
-
-@media #{$bp-m} {
   .immigration {
     float: left;
     width: 100%;
     padding-right: 1.5em;
-    //width: 74.375%;
     margin-right: em(-$bluray-width);
   }
     .immigration__inner {
       margin-right: em($bluray-width);
     }
+
     .immigration__header__title {
-      font-size: em(63);
+      font-size: em(68);
     }
     .immigration__header__subtitle {
-      font-size: em(30);
+      font-size: em(33);
     }
+    .immigration__body {
+      font-size: em(18);
+    }
+}
+
+@media #{$bp-m} {
+  .immigration__header__title {
+    font-size: em(63);
+  }
+  .immigration__header__subtitle {
+    font-size: em(30);
+  }
 }
 
 @media #{$bp-l} {

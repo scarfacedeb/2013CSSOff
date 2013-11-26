@@ -38,15 +38,12 @@ $base-line-height: 1.3;
 // Colors
 $body-font-color: #000;
 $header-color: #cdc9dd;
-$charcoal-color: #464646;
 
 $featured-title-color: #fdcd84;
 $featured-subtitle-color: #cbb8a0;
 
 $barbie-title-color: #5f5d66;
 $barbie-body-color: #6e6c77;
-
-$boots-title-color: #24795a;
 
 $beatles-heading-color: #524741;
 $beatles-color: #71625a;
@@ -77,17 +74,50 @@ $z-barbie-front: 2;
 $z-barbie-front-closed: 7;
 
 
-// Site header
-$site-header-width: 585px;
+/*
+  Header
+  ========================================================================== */
 
-$site-header-font-size: 17.42em;
-//$site-header-width: 2.6em;
-$site-header-width: 46%;
+// Typography
 
-$site-title-font-family: $extra-font-family;
 $site-title-font-weight: 300;
 $site-title-line-height: .8;
 
+
+// Colors
+
+$site-title-color: #fff;
+$site-title-color-small: #000;
+
+
+// Misc
+
+$site-header-width: 46%;
+
+
+
+/*
+  Layout
+  ========================================================================== */
+
+$volume-title-indent-small: em(60);
+
+
+
+
+/*
+  Boots
+  ========================================================================== */
+
+// Colors
+
+$boots-title-color: #24795a;
+$boots-body-color: #464646;
+
+
+// Z-indexes
+
+$z-boots-img: 10;
 
 
 /*
@@ -98,6 +128,8 @@ $site-title-line-height: .8;
 
 $bullets-border-color: #e5e5e5;
 $bullets-text-color: #e0e0e0;
+
+
 
 
 /*
@@ -121,7 +153,7 @@ $bluray-border-color: #234f70;
 $z-bluray-premier-title: 2;
 
 
-// Dimensions
+// Misc
 
 $bluray-width: 226;
 

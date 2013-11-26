@@ -3,16 +3,17 @@
   ========================================================================== */
 
 .site-footer {
+  clear: both;
   overflow: hidden;
   margin: 0 auto;
   padding: em(24) 0;
   max-width: $max-width;
   border-top: 1px solid #e5e5e5;
+  text-align: center;
 }
   .site-footer__copyright {
     @extend .lato;
 
-    float: left;
     font-size: em(17);
     color: #8c8c8c;
   }
@@ -23,12 +24,27 @@
   .site-footer__author {
     @extend .merriweather;
 
-    float: right;
-    max-width: em(208, 13);
-    text-align: right;
+    margin-top: 1em;
+    padding: 0 1.5em;
     font-size: em(13);
     color: #989898;
   }
     .site-footer__author__name {
       font-weight: 700;
     }
+
+@media #{$bp-s} {
+  .site-footer {
+    text-align: left;
+  }
+    .site-footer__copyright {
+      float: left;
+    }
+    .site-footer__author {
+      float: right;
+      margin-top: 0;
+      padding: 0;
+      max-width: em(208, 13);
+      text-align: right;
+    }
+}
