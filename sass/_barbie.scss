@@ -9,20 +9,19 @@
   font-size: .8em;
 }
   .barbie__title {
+    @extend .lora;
+
+
     margin: .5em 0 .3em;
-    font: {
-      family: $extra2-font-family;
-      size: em(36);
-      weight: 600;
-      style: italic;
-    };
+    font-size: em(36);
+    font-weight: 700;
+    font-style: italic;
     color: $barbie-title-color;
   }
   .barbie__body {
-    font: {
-      family: $extra-font-family;
-      size: em(19);
-    };
+    @extend .lato;
+
+    font-size: em(19);
     color: $barbie-body-color;
   }
 

@@ -11,16 +11,12 @@
 }
 
   .featured__img {
-    @include transform(rotate(-4deg) translateX(-17%));
+    @include transform(rotate(-4deg) translateX(-2%));
     @include backface-visibility(hidden);
 
     position: relative;
     max-width: 760px;
 
-    img {
-      // compensate white space from translateX
-      //max-width: 118%;
-    }
     &:after {
       @include transform(rotate(-3deg));
 
@@ -41,27 +37,23 @@
     }
   }
   .featured__body {
+    @extend .merriweather;
+
     position: relative;
     z-index: $z-featured-body;
     margin-top: -5.9em;
-    font: {
-      family: $body-font-family;
-      weight: $body-font-weight;
-      size: em(25);
-    };
+    font-size: em(25);
   }
     .featured__title {
+      @extend .oswald;
+
       position: relative;
       margin-bottom: 0.25em;
       max-width: 8em;
       line-height: 1.1;
       text-transform: uppercase;
       text-shadow: 0px -15px 70px rgba(0,0,0,.7);
-      font: {
-        family: $heading-font-family;
-        size: 2.5em;
-        weight: normal;
-      };
+      font-size: 2.5em;
       color: $featured-title-color;
     }
     .featured__subtitle {
@@ -97,6 +89,11 @@
       @include transform(rotate(-4deg) translateX(-19%));
 
       -webkit-transition: -webkit-filter 1s;
+
+      img {
+        // compensate white space from translateX
+        max-width: 116%;
+      }
     }
     .featured__body {
       max-width: 21em;

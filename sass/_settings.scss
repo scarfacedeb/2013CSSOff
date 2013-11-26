@@ -35,44 +35,6 @@ $base-line-height: 1.3;
 
 
 
-// Colors
-$body-font-color: #000;
-$header-color: #cdc9dd;
-
-$featured-title-color: #fdcd84;
-$featured-subtitle-color: #cbb8a0;
-
-$barbie-title-color: #5f5d66;
-$barbie-body-color: #6e6c77;
-
-$beatles-heading-color: #524741;
-$beatles-color: #71625a;
-
-// Typography
-$body-font-family: 'Merriweather', serif;
-$body-font-weight: 300;
-
-// headings
-$heading-font-family: 'Oswald', sans-serif;
-
-// $alpha-line-height: $base-line-height;
-// $alpha-font-family: $heading-font-family;
-// $alpha-font-weight: normal;
-
-
-$extra-font-family: 'Lato', sans-serif;
-$extra2-font-family: 'Lora', serif;
-
-
-
-// z-indexes
-$z-site-title: 60;
-$z-featured-body: 10;
-$z-barbie: 80;
-$z-barbie-back: 5;
-$z-barbie-front: 2;
-$z-barbie-front-closed: 7;
-
 
 /*
   Header
@@ -86,8 +48,14 @@ $site-title-line-height: .8;
 
 // Colors
 
+$site-header-color: #cdc9dd;
 $site-title-color: #fff;
 $site-title-color-small: #000;
+
+
+// Z-indexes
+
+$z-site-title: 60;
 
 
 // Misc
@@ -96,11 +64,61 @@ $site-header-width: 46%;
 
 
 
+
 /*
   Layout
   ========================================================================== */
 
+// Colors
+
+$body-font-color: #000;
+
+
+
+
+// Misc
+
 $volume-title-indent-small: em(60);
+
+
+
+
+
+/*
+  Featured
+  ========================================================================== */
+
+// Colors
+
+$featured-title-color: #fdcd84;
+$featured-subtitle-color: #cbb8a0;
+
+
+
+// Z-indexes
+
+$z-featured-body: 10;
+
+
+
+
+/*
+  Barbie
+  ========================================================================== */
+
+// Colors
+
+$barbie-title-color: #5f5d66;
+$barbie-body-color: #6e6c77;
+
+
+
+// Z-indexes
+
+$z-barbie: 80;
+$z-barbie-back: 5;
+$z-barbie-front: 2;
+$z-barbie-front-closed: 7;
 
 
 
@@ -128,6 +146,20 @@ $z-boots-img: 10;
 
 $bullets-border-color: #e5e5e5;
 $bullets-text-color: #e0e0e0;
+
+
+
+
+/*
+  Beatles
+  ========================================================================== */
+
+// Colors
+
+$beatles-heading-color: #524741;
+$beatles-color: #71625a;
+
+
 
 
 

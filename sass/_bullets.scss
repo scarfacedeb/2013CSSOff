@@ -8,6 +8,8 @@
   margin: 2em 0;
 }
   .bullets__title {
+    @extend .oswald;
+
     padding: 1em 0;
     border-top: 1px solid;
     border-bottom: 1px solid;
@@ -16,11 +18,7 @@
       align: center;
       transform: uppercase;
     };
-    font: {
-      family: $heading-font-family;
-      size: em(15);
-      weight: 400;
-    };
+    font-size: em(15);
     color: #a97d35;
   }
     .bullets__title__subtitle {

@@ -7,8 +7,9 @@
   margin-bottom: 3em;
 }
   .immigration__header {
+    @extend .oswald;
+
     display: inline-block;
-    font-family: $heading-font-family;
   }
     .immigration__header__title {
       margin-bottom: 0.256em;
