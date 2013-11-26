@@ -1,0 +1,66 @@
+/*
+  Overflow
+  ========================================================================== */
+
+
+.overflow {
+  clear: both;
+  margin-bottom: 3em;
+}
+
+  .overflow__title {
+    @extend .oswald;
+
+    position: relative;
+    margin-bottom: em(21);
+    font-size: em(82);
+    color: #a0b4c0;
+
+    span {
+      display: block;
+      @include transform(rotateZ(6deg) translate(51px, 67px));
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -21px;
+      left: -21px;
+      z-index: 2;
+      width: 1063px;
+      height: 306px;
+      background: url(../images/overflow.png) no-repeat top left;
+    }
+  }
+
+  .overflow__body {
+    @extend .lora;
+
+    position: relative;
+    z-index: 4;
+    font-style: italic;
+    //font-size: em(16);
+    color: #5e6c74;
+
+    p:first-child {
+      @include transform(rotateZ(2.4deg));
+
+      float: right;
+      margin-bottom: 1em;
+      max-width: em(735);
+      text-align: right;
+    }
+    p:nth-child(2) {
+      @include transform(rotateZ(-1deg));
+
+      clear: right;
+      margin-bottom: 2.2em;
+      max-width: em(685);
+    }
+    p:last-child {
+      @include transform(rotateZ(1deg));
+
+      margin-left: em(128);
+      max-width: em(740);
+    }
+  }
