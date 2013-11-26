@@ -26,3 +26,151 @@
       text-transform: none;
       color: #cbb8a0;
     }
+
+
+  .bullets__list {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+
+
+    @include keyframes(fireBullet){
+      20% {
+        @include transform(translate(40%, -1000%));
+        opacity: 0;
+      }
+      81% {
+        @include transform(translate(80%, -40%));
+        opacity: 0;
+      }
+      100% {
+        @include transform(translate(40%, -40%));
+        opacity: 1;
+      }
+    }
+
+
+    .bullet {
+      @extend .oswald;
+
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+      padding-top: 22%;
+      width: 20%;
+      line-height: 1.1;
+      font-size: 1rem;
+      font-size: 16px;
+      color: #e0e0e0;
+      list-style-type: none;
+
+      &:hover,
+      &:focus {
+        .bullet__img {
+          @include transform(scale(0.9) rotate(30deg));
+        }
+          .bullet__img__bullet {
+            @include animation(fireBullet 1.5s ease);
+          }
+      }
+    }
+      .bullet__gr {
+        text-transform: none;
+      }
+
+      .bullet__img {
+        @include transition-property (transform);
+        @include transition-duration(.8s);
+        @include transition-delay(.3s);
+        @include transition-timing-function(ease-in-out);
+
+        position: absolute;
+        left: 0;
+        //right: 0;
+        bottom: 115px;
+        z-index: 5;
+      }
+        .bullet__img__shell {
+          position: relative;
+          z-index: 6;
+        }
+        .bullet__img__bullet {
+          // @include transition-property (transform);
+          // @include transition-duration(.2s);
+          // @include transition-delay(.9s); // duration of bullet_img transition
+          // @include transition-timing-function(ease);
+          @include transform(translate(40%, -40%));
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+        }
+
+    .bullet--remington,
+    .bullet--winchester {
+      .bullet__calibre {
+        font-size: em(79);
+      }
+      .bullet__maker {
+        font-size: em(28);
+      }
+      .bullet__type {
+        font-size: em(32);
+      }
+    }
+
+    .bullet--winchester {
+      .bullet__img__bullet {
+        // use top, instead of translate, it'd allow to apply singular translate in animation
+        top: -25px;
+      }
+    }
+
+    .bullet--russian {
+      .bullet__img__bullet {
+        top: -20px;
+        left: -4px;
+      }
+      .bullet__calibre {
+        text-transform: none;
+        font-size: em(31);
+      }
+      .bullet__maker {
+        font-size: em(40);
+      }
+      .bullet__type {
+        font-size: em(39);
+      }
+    }
+
+    .bullet--thumper-220,
+    .bullet--thumper-240 {
+      .bullet__calibre {
+        font-size: em(87);
+      }
+      .bullet__maker {
+        font-size: em(38);
+      }
+    }
+
+    .bullet--thumper-220 {
+      .bullet__img__bullet {
+        top: -16px;
+        left: -8px;
+      }
+      .bullet__type {
+        font-size: em(40);
+      }
+    }
+
+    .bullet--thumper-240 {
+      .bullet__img__bullet {
+        top: -7px;
+        left: -9px;
+      }
+      .bullet__type {
+        font-size: em(32);
+      }
+    }
