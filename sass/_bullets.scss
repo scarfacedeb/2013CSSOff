@@ -3,8 +3,9 @@
   ========================================================================== */
 
 .bullets {
-  @include span-columns(10);
-  @include omega;
+  clear: both;
+  padding: 0 1em;
+  margin-bottom: 2em;
 }
   .bullets__title {
     padding: 1em 0;
@@ -17,20 +18,26 @@
     };
     font: {
       family: $heading-font-family;
-      size: em(18);
+      size: em(15);
       weight: 400;
     };
-    color: #fdcd84;
+    color: #a97d35;
   }
     .bullets__title__subtitle {
-      text-transform: none;
-      color: #cbb8a0;
+      @extend .lato;
+
+      margin-left: .5em;
+      vertical-align: top;
+      font-size: em(12, 15);
+      font-weight: 700;
+      color: #e0c167;
     }
 
 
   .bullets__list {
     margin: 0;
     padding: 0;
+    text-align: center;
     font-size: 0;
   }
 
@@ -54,30 +61,53 @@
     .bullet {
       @extend .oswald;
 
+      @include transition(color .5s ease-in-out .2s);
+
       position: relative;
       display: inline-block;
       vertical-align: bottom;
-      padding-top: 22%;
-      width: 20%;
+      // padding-top: 225px;
+      margin-top: 1em;
+      padding-left: 1%;
+      width: 50%;
+      height: 405px; // no need to tune on small bp
+      border-left: 1px solid $bullets-border-color;
       line-height: 1.1;
-      font-size: 1rem;
-      font-size: 16px;
-      color: #e0e0e0;
+      font-size: .8rem;
+      color: $bullets-text-color;
       list-style-type: none;
+
+      &:first-child {
+        padding-left: 0;
+        border-left: none;
+      }
 
       &:hover,
       &:focus {
+        color: darken($bullets-text-color, 50);
+
         .bullet__img {
-          @include transform(scale(0.9) rotate(30deg));
+          @include transform(scale(0.9) rotate(30deg) translate(-30%, -30%));
+          @include backface-visibility(hidden);
         }
           .bullet__img__bullet {
             @include animation(fireBullet 1.5s ease);
+            @include backface-visibility(hidden);
           }
       }
     }
-      .bullet__gr {
-        text-transform: none;
+      .bullet__desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        span {
+          white-space: nowrap;
+        }
       }
+        .bullet__gr {
+          text-transform: none;
+        }
 
       .bullet__img {
         @include transition-property (transform);
@@ -86,7 +116,7 @@
         @include transition-timing-function(ease-in-out);
 
         position: absolute;
-        left: 0;
+        left: 30%;
         //right: 0;
         bottom: 115px;
         z-index: 5;
@@ -129,6 +159,8 @@
     }
 
     .bullet--russian {
+      border-left-width: 0;
+
       .bullet__img__bullet {
         top: -20px;
         left: -4px;
@@ -166,11 +198,56 @@
     }
 
     .bullet--thumper-240 {
+      border-left-width: 0;
+
       .bullet__img__bullet {
         top: -7px;
-        left: -9px;
+        left: -7px;
       }
       .bullet__type {
         font-size: em(32);
       }
     }
+
+@media #{$bp-xs} {
+  .bullet {
+    width: 33.3%;
+    font-size: 1rem;
+  }
+    .bullet--russian,
+    .bullet--thumper-240 {
+      border-left-width: 1px;
+    }
+    .bullet--thumper-220 {
+      border-left-width: 0;
+    }
+}
+
+
+@media #{$bp-m} {
+  .bullets {
+    float: right;
+    clear: none;
+    padding: 0;
+    width: 82.91667%; // from neat
+  }
+    .bullet {
+      width: 20%;
+      font-size: 0.8rem;
+    }
+      .bullet__img {
+        // no need to drain phone's power;
+        // consider performance carefully!
+        -webkit-filter: drop-shadow(8px 8px rgba(0,0,0,.5));
+      }
+
+    .bullet--thumper-220 {
+      border-left-width: 1px;
+    }
+}
+
+@media #{$bp-l} {
+  .bullet {
+    font-size: 1rem;
+  }
+}

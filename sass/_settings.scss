@@ -48,8 +48,6 @@ $barbie-body-color: #6e6c77;
 
 $boots-title-color: #24795a;
 
-$bullets-border-color: #e5e5e5;
-
 $beatles-heading-color: #524741;
 $beatles-color: #71625a;
 
@@ -92,6 +90,15 @@ $site-title-line-height: .8;
 
 
 
+/*
+  Bullets
+  ========================================================================== */
+
+// Colors
+
+$bullets-border-color: #e5e5e5;
+$bullets-text-color: #e0e0e0;
+
 
 /*
   Bluray
@@ -117,3 +124,5 @@ $z-bluray-premier-title: 2;
 // Dimensions
 
 $bluray-width: 226;
+
+
