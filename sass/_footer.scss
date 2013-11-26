@@ -1,0 +1,34 @@
+/*
+  Footer
+  ========================================================================== */
+
+.site-footer {
+  overflow: hidden;
+  margin: 0 auto;
+  padding: em(24) 0;
+  max-width: $max-width;
+  border-top: 1px solid #e5e5e5;
+}
+  .site-footer__copyright {
+    @extend .lato;
+
+    float: left;
+    font-size: em(17);
+    color: #8c8c8c;
+  }
+    .site-footer__copyright__title {
+      color: #000;
+    }
+
+  .site-footer__author {
+    @extend .merriweather;
+
+    float: right;
+    max-width: em(208, 13);
+    text-align: right;
+    font-size: em(13);
+    color: #989898;
+  }
+    .site-footer__author__name {
+      font-weight: 700;
+    }
