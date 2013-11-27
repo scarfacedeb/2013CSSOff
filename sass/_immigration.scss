@@ -11,14 +11,14 @@
 
     display: inline-block;
   }
-    .immigration__header__title {
+    .immigration__title {
       margin-bottom: 0.256em;
       padding-bottom: 0.256em;
       border-bottom: 0.254em solid #000;
       text-transform: uppercase;
       font-size: em(50);
     }
-     .immigration__header__subtitle {
+     .immigration__subtitle {
       margin-bottom: 0.512em;
       padding-bottom: 0.487179em;
       border-bottom: 0.076923em solid #000;
@@ -44,10 +44,10 @@
       margin-right: em($bluray-width);
     }
 
-    .immigration__header__title {
+    .immigration__title {
       font-size: em(68);
     }
-    .immigration__header__subtitle {
+    .immigration__subtitle {
       font-size: em(33);
     }
     .immigration__body {
@@ -56,10 +56,10 @@
 }
 
 @media #{$bp-m} {
-  .immigration__header__title {
+  .immigration__title {
     font-size: em(63);
   }
-  .immigration__header__subtitle {
+  .immigration__subtitle {
     font-size: em(30);
   }
 }
@@ -69,10 +69,10 @@
     font-size: 1em;
     padding-left: 0;
   }
-    .immigration__header__title {
+    .immigration__title {
       font-size: em(82);
     }
-    .immigration__header__subtitle {
+    .immigration__subtitle {
       font-size: em(39);
     }
     .immigration__body {
